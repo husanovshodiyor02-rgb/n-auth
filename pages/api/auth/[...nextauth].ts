@@ -3,11 +3,11 @@ import GithubProvider from "next-auth/providers/github"
 import CredentialsProvider from "next-auth/providers/credentials"
 
 export const authOptions: NextAuthOptions = {
-  secret: process.env.AUTH_SECRET,
+  secret: process.env.NEXTAUTH_SECRET,
   providers: [
     GithubProvider({
-      clientId: process.env.AUTH_GITHUB_ID!,
-      clientSecret: process.env.AUTH_GITHUB_SECRET!,
+      clientId: process.env.GITHUB_ID!,
+      clientSecret: process.env.GITHUB_SECRET!,
     }),
     {
       id: "netlify",
@@ -25,8 +25,8 @@ export const authOptions: NextAuthOptions = {
           image: profile.avatar_url,
         }
       },
-      clientId: process.env.AUTH_NETLIFY_ID!,
-      clientSecret: process.env.AUTH_NETLIFY_SECRET!,
+      clientId: process.env.NETLIFY_ID!,
+      clientSecret: process.env.NETLIFY_SECRET!,
       style: {
         logo: "/netlify.svg",
         bg: "#00C7B7",
@@ -51,8 +51,8 @@ export const authOptions: NextAuthOptions = {
             : null,
         }
       },
-      clientId: process.env.AUTH_YANDEX_ID!,
-      clientSecret: process.env.AUTH_YANDEX_SECRET!,
+      clientId: process.env.YANDEX_ID!,
+      clientSecret: process.env.YANDEX_SECRET!,
       style: {
         logo: "/yandex.svg",
         bg: "#FC3F1D",
